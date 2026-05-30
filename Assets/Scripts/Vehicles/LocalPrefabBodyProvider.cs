@@ -83,6 +83,25 @@ public sealed class LocalPrefabBodyProvider : GeneratedBodyProvider
         float scaleZ = target.z / Mathf.Max(bounds.size.z, 0.01f);
         float scale = Mathf.Min(scaleX, scaleY, scaleZ);
         body.localScale *= scale;
+
+        AlignBodyBottom(body, Mathf.Max(0.35f, target.y * 0.55f));
+    }
+
+    private static void AlignBodyBottom(Transform body, float desiredBottomY)
+    {
+        if (body.parent == null)
+        {
+            return;
+        }
+
+        Bounds bounds = CalculateBounds(body);
+        if (bounds.size.sqrMagnitude < 0.0001f)
+        {
+            return;
+        }
+
+        float currentBottomY = body.parent.InverseTransformPoint(bounds.min).y;
+        body.localPosition += Vector3.up * (desiredBottomY - currentBottomY);
     }
 
     private static Bounds CalculateBounds(Transform root)

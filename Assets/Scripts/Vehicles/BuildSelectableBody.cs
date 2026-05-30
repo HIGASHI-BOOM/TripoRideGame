@@ -24,6 +24,7 @@ public sealed class BuildSelectableBody : MonoBehaviour
             selectionCollider = gameObject.AddComponent<BoxCollider>();
         }
 
+        selectionCollider.isTrigger = true;
         FitColliderToRenderers();
 
         if (selectionOutline == null)

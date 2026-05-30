@@ -339,7 +339,7 @@ public sealed class VehicleController : MonoBehaviour
         float halfWidth = Mathf.Max(bounds.extents.x + 0.18f, 0.75f);
         float frontZ = Mathf.Lerp(bounds.center.z, bounds.max.z, 0.65f);
         float rearZ = Mathf.Lerp(bounds.center.z, bounds.min.z, 0.65f);
-        float socketY = Mathf.Max(bounds.min.y + 0.28f, 0.28f);
+        float socketY = Mathf.Max(bounds.min.y - 0.05f, 0.35f);
 
         SetSocketPosition(WheelSocketId.FL, new Vector3(-halfWidth, socketY, frontZ));
         SetSocketPosition(WheelSocketId.FR, new Vector3(halfWidth, socketY, frontZ));
