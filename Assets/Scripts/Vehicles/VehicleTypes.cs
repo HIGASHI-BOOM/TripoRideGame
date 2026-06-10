@@ -23,6 +23,13 @@ public enum GameInputMode
     Menu
 }
 
+public enum BuildRotationAxis
+{
+    X,
+    Y,
+    Z
+}
+
 [Serializable]
 public sealed class VehicleBuildData
 {

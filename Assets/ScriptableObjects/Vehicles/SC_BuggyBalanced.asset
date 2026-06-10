@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 457344a408715e447befaf747240b42b, type: 3}
+  m_Name: SC_BuggyBalanced
+  m_EditorClassIdentifier: Assembly-CSharp::VehicleSimulationConfig
+  mass: 980
+  centerOfMass: {x: 0, y: -0.36, z: 0.08}
+  fitCenterOfMassToGeneratedBody: 1
+  generatedCenterOfMassHeight: 0.17
+  idleDrag: 0.22
+  brakeDrag: 7.5
+  driveAngularDamping: 2.4
+  parkedAngularDamping: 4
+  driveForce: 6200
+  reverseForce: 3200
+  maxFlatSpeed: 41.666668
+  maxReverseSpeed: 13.888889
+  maxSteerAngle: 14
+  highSpeedSteerAngle: 4
+  steerSharpness: 7
+  frontTireGrip: 3.2
+  rearTireGrip: 16
+  brakeForce: 10500
+  autoFitSocketsToGeneratedBody: 1
+  alignWheelSocketsByBodyBottom: 1
+  wheelBodyBottomClearance: 0
+  fallbackWheelRadius: 0.42
+  chassisWidthScale: 0.9
+  chassisLengthScale: 0.92
+  chassisHeightFraction: 0.42
+  chassisMinHeight: 0.45
+  useUpperCabinCollider: 0
+  speedDownforce: 8
+  uprightStabilization: 0.22

@@ -2,10 +2,27 @@ using UnityEngine;
 
 public sealed class BuildSelectableBody : MonoBehaviour
 {
+    private const float RotationStepDegrees = 90f;
+
     [SerializeField] private BoxCollider selectionCollider;
     [SerializeField] private RuntimeSelectionOutline selectionOutline;
 
     public Bounds WorldBounds => CalculateBounds();
+
+    public void RotateStep(BuildRotationAxis axis, int direction)
+    {
+        Vector3 rotationAxis = axis switch
+        {
+            BuildRotationAxis.X => Vector3.right,
+            BuildRotationAxis.Y => Vector3.up,
+            BuildRotationAxis.Z => Vector3.forward,
+            _ => Vector3.up
+        };
+
+        int signedDirection = direction < 0 ? -1 : 1;
+        transform.localRotation = Quaternion.AngleAxis(RotationStepDegrees * signedDirection, rotationAxis) * transform.localRotation;
+        RefitColliderToRenderers();
+    }
 
     private void Awake()
     {
@@ -40,6 +57,19 @@ public sealed class BuildSelectableBody : MonoBehaviour
         selectionOutline.SetSelected(false);
     }
 
+    public void RefitColliderToRenderers()
+    {
+        if (selectionCollider == null)
+        {
+            selectionCollider = GetComponent<BoxCollider>();
+        }
+
+        if (selectionCollider != null)
+        {
+            FitColliderToRenderers();
+        }
+    }
+
     public void SetSelected(bool selected)
     {
         if (selectionOutline == null)
@@ -60,20 +90,16 @@ public sealed class BuildSelectableBody : MonoBehaviour
 
     private void FitColliderToRenderers()
     {
-        Bounds bounds = CalculateBounds();
-        if (bounds.size.sqrMagnitude < 0.0001f)
+        Bounds localBounds = CalculateLocalRendererBounds();
+        if (localBounds.size.sqrMagnitude < 0.0001f)
         {
             selectionCollider.center = Vector3.zero;
             selectionCollider.size = Vector3.one;
             return;
         }
 
-        selectionCollider.center = transform.InverseTransformPoint(bounds.center);
-        Vector3 localSize = transform.InverseTransformVector(bounds.size);
-        selectionCollider.size = new Vector3(
-            Mathf.Abs(localSize.x),
-            Mathf.Abs(localSize.y),
-            Mathf.Abs(localSize.z));
+        selectionCollider.center = localBounds.center;
+        selectionCollider.size = localBounds.size;
     }
 
     private Bounds CalculateBounds()
@@ -106,5 +132,47 @@ public sealed class BuildSelectableBody : MonoBehaviour
         }
 
         return bounds;
+    }
+
+    private Bounds CalculateLocalRendererBounds()
+    {
+        Renderer[] renderers = GetComponentsInChildren<Renderer>(true);
+        bool hasBounds = false;
+        Bounds bounds = new Bounds(Vector3.zero, Vector3.zero);
+
+        for (int i = 0; i < renderers.Length; i++)
+        {
+            if (renderers[i] is LineRenderer)
+            {
+                continue;
+            }
+
+            Bounds rendererBounds = renderers[i].bounds;
+            Vector3 min = rendererBounds.min;
+            Vector3 max = rendererBounds.max;
+            EncapsulateLocalPoint(ref bounds, ref hasBounds, new Vector3(min.x, min.y, min.z));
+            EncapsulateLocalPoint(ref bounds, ref hasBounds, new Vector3(min.x, min.y, max.z));
+            EncapsulateLocalPoint(ref bounds, ref hasBounds, new Vector3(min.x, max.y, min.z));
+            EncapsulateLocalPoint(ref bounds, ref hasBounds, new Vector3(min.x, max.y, max.z));
+            EncapsulateLocalPoint(ref bounds, ref hasBounds, new Vector3(max.x, min.y, min.z));
+            EncapsulateLocalPoint(ref bounds, ref hasBounds, new Vector3(max.x, min.y, max.z));
+            EncapsulateLocalPoint(ref bounds, ref hasBounds, new Vector3(max.x, max.y, min.z));
+            EncapsulateLocalPoint(ref bounds, ref hasBounds, new Vector3(max.x, max.y, max.z));
+        }
+
+        return hasBounds ? bounds : new Bounds(Vector3.zero, Vector3.zero);
+    }
+
+    private void EncapsulateLocalPoint(ref Bounds bounds, ref bool hasBounds, Vector3 worldPoint)
+    {
+        Vector3 localPoint = transform.InverseTransformPoint(worldPoint);
+        if (!hasBounds)
+        {
+            bounds = new Bounds(localPoint, Vector3.zero);
+            hasBounds = true;
+            return;
+        }
+
+        bounds.Encapsulate(localPoint);
     }
 }

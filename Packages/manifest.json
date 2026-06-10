@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "com.coplaydev.unity-mcp": "file:com.coplaydev.unity-mcp",
+    "com.tripo3d.unitybridge": "file:com.tripo3d.unitybridge",
     "com.unity.ai.navigation": "2.0.12",
     "com.unity.collab-proxy": "2.12.4",
     "com.unity.ide.rider": "3.0.40",

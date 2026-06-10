@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/KartEntryGame.unity
+    guid: a7b4fb27efd247e48803a7eac471330f
+  - enabled: 1
+    path: Assets/Scenes/KartVehicleConfig.unity
+    guid: 3e541effcd16d2f428016e74940f0f50
+  - enabled: 1
+    path: Assets/Scenes/KartFormalGame.unity
+    guid: 10018022cbba91946becd9eb1e0ca3f3
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:

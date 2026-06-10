@@ -81,7 +81,8 @@ public sealed class BuildSelectionController : MonoBehaviour
     private void TrySelectUnderCursor()
     {
         Vector2 mousePosition = Mouse.current.position.ReadValue();
-        if (demoUi != null && demoUi.MenuVisible && ignoredUiRect.Contains(new Vector2(mousePosition.x, Screen.height - mousePosition.y)))
+        Rect uiRect = demoUi != null ? demoUi.ActiveMenuRect : ignoredUiRect;
+        if (uiRect.Contains(new Vector2(mousePosition.x, Screen.height - mousePosition.y)))
         {
             return;
         }

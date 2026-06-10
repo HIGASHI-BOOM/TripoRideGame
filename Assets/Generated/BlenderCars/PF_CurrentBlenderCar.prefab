@@ -1,0 +1,306 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6301019729915490573
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5674261380380234984}
+  m_Layer: 0
+  m_Name: PF_CurrentBlenderCar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5674261380380234984
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6301019729915490573}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4715577889116304807}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &5114858163397186124
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5674261380380234984}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6537069937053548516, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: d799178ebdd7ab046bb865fb30e322f3, type: 2}
+    - target: {fileID: -4135703708340461698, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: d799178ebdd7ab046bb865fb30e322f3, type: 2}
+    - target: {fileID: -1765097783736378317, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: d799178ebdd7ab046bb865fb30e322f3, type: 2}
+    - target: {fileID: -1748203986799191022, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: d799178ebdd7ab046bb865fb30e322f3, type: 2}
+    - target: {fileID: -1491180260961666387, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: d799178ebdd7ab046bb865fb30e322f3, type: 2}
+    - target: {fileID: 919132149155446097, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+      propertyPath: m_Name
+      value: CurrentBlenderCar_Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017072185221178700, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: d799178ebdd7ab046bb865fb30e322f3, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -8325689553952117475, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4867271488428165123}
+    - targetCorrespondingSourceObject: {fileID: -5985934362099304830, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2794925507202903868}
+    - targetCorrespondingSourceObject: {fileID: 1326639824636851712, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7891250204059755043}
+    - targetCorrespondingSourceObject: {fileID: 250986125936358388, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6096099372102078388}
+    - targetCorrespondingSourceObject: {fileID: 8748574470494689995, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7099456534206420115}
+  m_SourcePrefab: {fileID: 100100000, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+--- !u!23 &27205240932666674 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -4135703708340461698, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+  m_PrefabInstance: {fileID: 5114858163397186124}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &794656752944452020 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -3603846734648359944, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+  m_PrefabInstance: {fileID: 5114858163397186124}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1444922250242708747 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -3245189568780204217, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+  m_PrefabInstance: {fileID: 5114858163397186124}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &2397746628718120542 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -1748203986799191022, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+  m_PrefabInstance: {fileID: 5114858163397186124}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &2412447862162689663 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -1765097783736378317, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+  m_PrefabInstance: {fileID: 5114858163397186124}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &3293788370693908705 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -1491180260961666387, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+  m_PrefabInstance: {fileID: 5114858163397186124}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4433290390398960633 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -324938149649591883, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+  m_PrefabInstance: {fileID: 5114858163397186124}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4580880208280209543 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8748574470494689995, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+  m_PrefabInstance: {fileID: 5114858163397186124}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7099456534206420115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4580880208280209543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b80670f9bcbcf34ea06124d9c8c8666, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VehicleTireVisualController
+  vehicle: {fileID: 0}
+  tireTransform: {fileID: 4433290390398960633}
+  radiusSource: {fileID: 2397746628718120542}
+  steeringTire: 1
+  autoDetectRadius: 1
+  fallbackRadius: 0.11
+  steerAxis: {x: 0, y: 0, z: 1}
+  rollAxis: {x: 0, y: 1, z: 0}
+  invertRoll: 1
+--- !u!4 &4715577889116304807 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+  m_PrefabInstance: {fileID: 5114858163397186124}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5008019189696766392 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 250986125936358388, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+  m_PrefabInstance: {fileID: 5114858163397186124}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6096099372102078388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5008019189696766392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b80670f9bcbcf34ea06124d9c8c8666, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VehicleTireVisualController
+  vehicle: {fileID: 0}
+  tireTransform: {fileID: 1444922250242708747}
+  radiusSource: {fileID: 2412447862162689663}
+  steeringTire: 1
+  autoDetectRadius: 1
+  fallbackRadius: 0.11
+  steerAxis: {x: 0, y: 0, z: 1}
+  rollAxis: {x: 0, y: 1, z: 0}
+  invertRoll: 1
+--- !u!1 &5372395302177947473 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8325689553952117475, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+  m_PrefabInstance: {fileID: 5114858163397186124}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4867271488428165123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5372395302177947473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fd51facd5db63c4aa902a2b30259c1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VehicleSteeringWheelVisualController
+  vehicle: {fileID: 0}
+  steeringWheel: {fileID: 794656752944452020}
+  maxTurnAngle: 180
+  turnAxis: {x: 1, y: 0, z: 0}
+  invertTurn: 0
+--- !u!1 &6094086636878324812 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1326639824636851712, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+  m_PrefabInstance: {fileID: 5114858163397186124}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7891250204059755043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6094086636878324812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b80670f9bcbcf34ea06124d9c8c8666, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VehicleTireVisualController
+  vehicle: {fileID: 0}
+  tireTransform: {fileID: 7619493637246283413}
+  radiusSource: {fileID: 3293788370693908705}
+  steeringTire: 0
+  autoDetectRadius: 1
+  fallbackRadius: 0.11
+  steerAxis: {x: 0, y: 0, z: 1}
+  rollAxis: {x: 0, y: 1, z: 0}
+  invertRoll: 1
+--- !u!4 &6456456085253531746 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2261459007979518510, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+  m_PrefabInstance: {fileID: 5114858163397186124}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7619493637246283413 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -5816889912940413735, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+  m_PrefabInstance: {fileID: 5114858163397186124}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7644315078339060942 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5985934362099304830, guid: e6831e9bec7155b409681071b775d0af, type: 3}
+  m_PrefabInstance: {fileID: 5114858163397186124}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2794925507202903868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644315078339060942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b80670f9bcbcf34ea06124d9c8c8666, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VehicleTireVisualController
+  vehicle: {fileID: 0}
+  tireTransform: {fileID: 6456456085253531746}
+  radiusSource: {fileID: 27205240932666674}
+  steeringTire: 0
+  autoDetectRadius: 1
+  fallbackRadius: 0.11
+  steerAxis: {x: 0, y: 0, z: 1}
+  rollAxis: {x: 0, y: 1, z: 0}
+  invertRoll: 1

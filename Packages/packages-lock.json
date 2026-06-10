@@ -9,6 +9,14 @@
         "com.unity.test-framework": "1.1.31"
       }
     },
+    "com.tripo3d.unitybridge": {
+      "version": "file:com.tripo3d.unitybridge",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.unity.modules.jsonserialize": "1.0.0"
+      }
+    },
     "com.unity.ai.navigation": {
       "version": "2.0.12",
       "depth": 0,

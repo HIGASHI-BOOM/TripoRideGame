@@ -224,7 +224,7 @@ Rigidbody:
   serializedVersion: 5
   m_Mass: 900
   m_LinearDamping: 0.25
-  m_AngularDamping: 1.8
+  m_AngularDamping: 2.4
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -253,21 +253,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae10424c11da9ae4793de16498bf3ce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VehicleController
+  simulationConfig: {fileID: 11400000, guid: 34c0e935654874b4abb0caeb1e78d3e0, type: 2}
   body: {fileID: 744544640814591128}
   generatedBodyRoot: {fileID: 3860180449649543231}
   cameraTarget: {fileID: 2468553300356507319}
   driverSeat: {fileID: 5627015535311798331}
+  bodyCollider: {fileID: 4774391183868535561}
+  cabinCollider: {fileID: 3939202198512968503}
   wheelSockets:
   - {fileID: 6750893452333659648}
   - {fileID: 72339078186083515}
   - {fileID: 2846396103536684236}
   - {fileID: 1125879514355629078}
+  autoFitSocketsToGeneratedBody: 1
+  showColliderDebug: 1
+  alignWheelSocketsByBodyBottom: 1
+  wheelBodyBottomClearance: 0
+  fallbackWheelRadius: 0.42
+  chassisWidthScale: 0.9
+  chassisLengthScale: 0.92
+  chassisHeightFraction: 0.42
+  chassisMinHeight: 0.45
+  useUpperCabinCollider: 0
   driveForce: 5200
   reverseForce: 2600
-  turnTorque: 1900
+  maxFlatSpeed: 41.666668
+  maxReverseSpeed: 13.888889
+  maxSteerAngle: 10
+  highSpeedSteerAngle: 3
+  steerSharpness: 5
+  frontTireGrip: 1.6
+  rearTireGrip: 14
+  brakeForce: 9000
   brakeDrag: 7.5
   idleDrag: 0.25
-  maxFlatSpeed: 24
 --- !u!1 &6940741009604222774
 GameObject:
   m_ObjectHideFlags: 0

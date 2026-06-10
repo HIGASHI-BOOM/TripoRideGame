@@ -1028,6 +1028,7 @@ GameObject:
   - component: {fileID: 986105531}
   - component: {fileID: 986105530}
   - component: {fileID: 986105535}
+  - component: {fileID: 986105536}
   m_Layer: 0
   m_Name: VehicleDemoSystem
   m_TagString: Untagged
@@ -1048,7 +1049,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VehicleDemoUI
   manager: {fileID: 986105532}
+  tripoProvider: {fileID: 986105536}
   menuVisible: 1
+  tripoMode: 0
+  tripoPrompt: A compact stylized off-road buggy body, game-ready, chunky silhouette,
+    no wheels
 --- !u!114 &986105531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1083,7 +1088,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VehicleAssemblyManager
   vehicleRigPrefab: {fileID: 834734840323808817, guid: 6766de4a54ee9eb45969f2ddfaab5ed6, type: 3}
-  bodyProvider: {fileID: 986105533}
+  bodyProvider: {fileID: 986105536}
   smallWheelPrefab: {fileID: 7090798750768747970, guid: 887a87cf4edef4448a322b430ef7faf9, type: 3}
   mediumWheelPrefab: {fileID: 1575143342007860118, guid: 015ce0ee96cd56243955f418fca51c24, type: 3}
   spawnPoint: {fileID: 763983178}
@@ -1148,6 +1153,49 @@ MonoBehaviour:
   buildCamera: {fileID: 330585550}
   driveCamera: {fileID: 330585549}
   playerObject: {fileID: 1487803085}
+--- !u!114 &986105536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986105529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d3d676eea498dd45b14a21b10ca153e, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::TripoVehicleBodyProvider
+  generationMode: 0
+  prompt: A compact stylized off-road buggy body, game-ready, chunky silhouette,
+    no wheels
+  negativePrompt: wheels, tires, blurry, low quality, text, watermark
+  animalMountNegativePrompt: vehicle wheels, tires, car parts, extra limbs, broken mesh,
+    blurry, low quality, text, watermark
+  apiKeyOverride:
+  model: P1-20260311
+  faceLimit: 3000
+  texture: 1
+  pbr: 1
+  autoSize: 0
+  exportUv: 1
+  textureQuality: standard
+  compress:
+  imageSeed: -1
+  modelSeed: -1
+  textureSeed: -1
+  rigModel: v2.5-20260210
+  rigType: quadruped
+  rigSpec: tripo
+  animationPreset: preset:quadruped:walk
+  animateInPlace: 0
+  outputFolder: Assets/Generated/TripoModels
+  convertToFbx: 1
+  targetSize: {x: 2.4, y: 0.8, z: 4.2}
+  autoOrientLongestAxisToLength: 0
+  fixedRotationEuler: {x: 90, y: -90, z: 0}
+  fixedUniformScale: 5
+  pollIntervalSeconds: 2
+  requestTimeoutSeconds: 120
 --- !u!1 &1179316765
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c1bf0b2c7a9b564e88d5b8d09b6a356, type: 3}
+  m_Name: SC_ArcadeKart
+  m_EditorClassIdentifier: Assembly-CSharp::KartDriveConfig
+  mass: 420
+  centerOfMass: {x: 0, y: -0.45, z: 0.05}
+  linearDrag: 0.12
+  angularDrag: 2.8
+  accelerationForce: 10000
+  reverseForce: 8000
+  maxSpeed: 41.666668
+  maxReverseSpeed: 13.888889
+  brakeForce: 8500
+  lowSpeedTurnRate: 120
+  highSpeedTurnRate: 58
+  reverseSteerScale: 0.45
+  driftMinSpeed: 8
+  driftSteerThreshold: 0.28
+  driftGripScale: 0.62
+  driftTurnMultiplier: 1.18
+  driftCounterSteerMultiplier: 0.95
+  driftEntrySideImpulse: 4
+  driftEntryYawKick: 6
+  driftRecoveryGripMultiplier: 1.15
+  driftRecoveryDuration: 0.25
+  driftMiniBoostMinDuration: 0.2
+  driftMiniBoostSpeedGain: 20
+  driftMiniBoostDuration: 0.1
+  enableDriftMiniBoostFx: 1
+  enableExhaustSmokeFx: 1
+  showRiderCharacter: 1
+  lateralGrip: 10
+  downforce: 0
+  airborneGravityMultiplier: 8
+  uprightStability: 0.35
+  boostSpeedMultiplier: 3
+  boostMaxSpeedMultiplier: 5
+  boostOverspeedReturnRate: 35
+  boostForce: 13000
+  boostDuration: 0.5
+  enableScreenSpeedLines: 1
+  screenSpeedLineVisibleAtSpeedKph: 100
+  screenSpeedLineFullAtSpeedKph: 500
+  screenSpeedLineIntensitySmoothTime: 0.12
+  screenSpeedLineMinCount: 5
+  screenSpeedLineMaxCount: 54
+  screenSpeedLineMinLength: 180
+  screenSpeedLineMaxLength: 620
+  screenSpeedLineMinWidth: 5
+  screenSpeedLineMaxWidth: 24
+  screenSpeedLineCenterClearRadius: 0.34
+  screenSpeedLineColor: {r: 1, g: 1, b: 1, a: 0.82}
+  screenSpeedLineFlowSpeed: 1.35
+  useScreenSpeedLinePreview: 0
+  screenSpeedLinePreviewSpeedKph: 150

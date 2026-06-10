@@ -3,6 +3,7 @@ using UnityEngine;
 public sealed class VehicleAssemblyManager : MonoBehaviour
 {
     [SerializeField] private VehicleController vehicleRigPrefab;
+    [SerializeField] private VehicleSimulationConfig vehicleSimulationConfig;
     [SerializeField] private GeneratedBodyProvider bodyProvider;
     [SerializeField] private WheelAssembly smallWheelPrefab;
     [SerializeField] private WheelAssembly mediumWheelPrefab;
@@ -26,6 +27,15 @@ public sealed class VehicleAssemblyManager : MonoBehaviour
     public bool VehicleGenerationMode => vehicleGenerationMode;
     public bool Driving => driving;
     public VehicleBuildData BuildData => buildData;
+    public VehicleSimulationConfig VehicleSimulationConfig => vehicleSimulationConfig;
+
+    public void SetBodyProvider(GeneratedBodyProvider provider)
+    {
+        if (provider != null)
+        {
+            bodyProvider = provider;
+        }
+    }
 
     private void Awake()
     {
@@ -98,6 +108,7 @@ public sealed class VehicleAssemblyManager : MonoBehaviour
         Quaternion rotation = spawnPoint != null ? spawnPoint.rotation : transform.rotation;
         currentVehicle = Instantiate(vehicleRigPrefab, position, rotation);
         currentVehicle.name = "Runtime_VehicleRig";
+        currentVehicle.SetSimulationConfig(vehicleSimulationConfig);
         currentVehicle.SetDriveEnabled(false);
 
         if (bodyProvider != null && currentVehicle.GeneratedBodyRoot != null)
@@ -137,6 +148,7 @@ public sealed class VehicleAssemblyManager : MonoBehaviour
         if (wheel != null)
         {
             buildData.SetWheel(socket.SocketId, selectedWheelSize);
+            currentVehicle.RefitGeneratedBodyAttachments();
         }
 
         currentVehicle.SnapToWheelGround();
@@ -168,6 +180,25 @@ public sealed class VehicleAssemblyManager : MonoBehaviour
         driving = false;
         GameInputContext.SetMode(GameInputMode.Build);
         SetGenerationView();
+    }
+
+    public void RotateGeneratedBody(BuildRotationAxis axis, int direction)
+    {
+        if (currentVehicle == null || currentVehicle.GeneratedBodyRoot == null)
+        {
+            return;
+        }
+
+        BuildSelectableBody selectableBody = currentVehicle.GeneratedBodyRoot.GetComponentInChildren<BuildSelectableBody>();
+        if (selectableBody == null)
+        {
+            return;
+        }
+
+        selectableBody.RotateStep(axis, direction);
+        currentVehicle.ApplyGeneratedBody(new GeneratedVehicleBody(currentVehicle.GeneratedBodyRoot.gameObject));
+        currentVehicle.RefitGeneratedBodyAttachments();
+        currentVehicle.SnapToWheelGround();
     }
 
     public void StartDriving()
