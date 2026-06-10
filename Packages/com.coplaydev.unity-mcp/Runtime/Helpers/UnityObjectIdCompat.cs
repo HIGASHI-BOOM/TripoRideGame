@@ -29,10 +29,12 @@ namespace MCPForUnity.Runtime.Helpers
                 return 0;
             }
 
-#if UNITY_6000_5_OR_NEWER
+#if UNITY_6000_0_OR_NEWER
             return (int)EntityId.ToULong(obj.GetEntityId());
 #else
+#pragma warning disable 0618
             return obj.GetInstanceID();
+#pragma warning restore 0618
 #endif
         }
 
@@ -65,7 +67,9 @@ namespace MCPForUnity.Runtime.Helpers
             }
             return _instanceIdToObject?.Invoke(null, new object[] { instanceId }) as Object;
 #elif UNITY_6000_3_OR_NEWER
+#pragma warning disable 0618
             return EditorUtility.EntityIdToObject(instanceId);
+#pragma warning restore 0618
 #else
             return EditorUtility.InstanceIDToObject(instanceId);
 #endif

@@ -128,9 +128,7 @@ public sealed class KartAspectRatioSwitcher : MonoBehaviour
 
     private static void ApplyCurrentAspectToUiFrames()
     {
-        AspectRatioFitter[] fitters = FindObjectsByType<AspectRatioFitter>(
-            FindObjectsInactive.Include,
-            FindObjectsSortMode.None);
+        AspectRatioFitter[] fitters = FindObjectsByType<AspectRatioFitter>(FindObjectsInactive.Include);
 
         float aspect = KartAspectRatioSettings.TargetAspect;
         float scale = KartAspectRatioSettings.Mode == KartAspectRatioMode.Landscape16x9

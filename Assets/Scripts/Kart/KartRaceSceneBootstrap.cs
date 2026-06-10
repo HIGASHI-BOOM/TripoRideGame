@@ -57,22 +57,7 @@ public sealed class KartRaceSceneBootstrap : MonoBehaviour
             return;
         }
 
-        Canvas canvas = FindDashboardCanvas();
-        if (canvas == null)
-        {
-            Camera uiCamera = Camera.main;
-            GameObject canvasObject = new GameObject("Kart_DashboardCanvas", typeof(Canvas), typeof(CanvasScaler), typeof(GraphicRaycaster));
-            canvas = canvasObject.GetComponent<Canvas>();
-            canvas.renderMode = uiCamera != null ? RenderMode.ScreenSpaceCamera : RenderMode.ScreenSpaceOverlay;
-            canvas.worldCamera = uiCamera;
-            canvas.planeDistance = 1f;
-            canvas.sortingOrder = 35;
-
-            CanvasScaler scaler = canvasObject.GetComponent<CanvasScaler>();
-            scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
-            scaler.referenceResolution = new Vector2(1080f, 1920f);
-            scaler.matchWidthOrHeight = 0.5f;
-        }
+        Canvas canvas = FindOrCreateDashboardCanvas();
 
         GameObject overlayObject = new GameObject("ScreenSpeedLines", typeof(RectTransform), typeof(KartScreenSpeedLines));
         overlayObject.transform.SetParent(canvas.transform, false);
@@ -111,22 +96,7 @@ public sealed class KartRaceSceneBootstrap : MonoBehaviour
             return;
         }
 
-        Canvas canvas = FindDashboardCanvas();
-        if (canvas == null)
-        {
-            Camera uiCamera = Camera.main;
-            GameObject canvasObject = new GameObject("Kart_DashboardCanvas", typeof(Canvas), typeof(CanvasScaler), typeof(GraphicRaycaster));
-            canvas = canvasObject.GetComponent<Canvas>();
-            canvas.renderMode = uiCamera != null ? RenderMode.ScreenSpaceCamera : RenderMode.ScreenSpaceOverlay;
-            canvas.worldCamera = uiCamera;
-            canvas.planeDistance = 1f;
-            canvas.sortingOrder = 35;
-
-            CanvasScaler scaler = canvasObject.GetComponent<CanvasScaler>();
-            scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
-            scaler.referenceResolution = new Vector2(1080f, 1920f);
-            scaler.matchWidthOrHeight = 0.5f;
-        }
+        Canvas canvas = FindOrCreateDashboardCanvas();
 
         GameObject panelObject = new GameObject("TopSpeedDisplay", typeof(RectTransform), typeof(Image));
         panelObject.transform.SetParent(canvas.transform, false);
@@ -178,6 +148,30 @@ public sealed class KartRaceSceneBootstrap : MonoBehaviour
         }
 
         return null;
+    }
+
+    private static Canvas FindOrCreateDashboardCanvas()
+    {
+        Canvas canvas = FindDashboardCanvas();
+        if (canvas != null)
+        {
+            return canvas;
+        }
+
+        Camera uiCamera = Camera.main;
+        GameObject canvasObject = new GameObject("Kart_DashboardCanvas", typeof(Canvas), typeof(CanvasScaler), typeof(GraphicRaycaster));
+        canvas = canvasObject.GetComponent<Canvas>();
+        canvas.renderMode = uiCamera != null ? RenderMode.ScreenSpaceCamera : RenderMode.ScreenSpaceOverlay;
+        canvas.worldCamera = uiCamera;
+        canvas.planeDistance = 1f;
+        canvas.sortingOrder = 35;
+
+        CanvasScaler scaler = canvasObject.GetComponent<CanvasScaler>();
+        scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+        scaler.referenceResolution = new Vector2(1080f, 1920f);
+        scaler.matchWidthOrHeight = 0.5f;
+
+        return canvas;
     }
 
     private static Font GetUiFont()
