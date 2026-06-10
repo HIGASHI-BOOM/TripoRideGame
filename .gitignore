@@ -38,3 +38,7 @@ ProjectSettings/TripoApi.local.json
 
 # Local Codex cache
 .codex/mcp-tools-list.txt
+
+# Local verification captures and Blender autosave backups
+Assets/Screenshots/
+*.blend1
