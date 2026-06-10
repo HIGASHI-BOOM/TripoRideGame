@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody))]
 public sealed class KartController : MonoBehaviour
@@ -7,6 +6,7 @@ public sealed class KartController : MonoBehaviour
     [Header("References")]
     [SerializeField] private KartDriveConfig driveConfig;
     [SerializeField] private Rigidbody body;
+    [SerializeField] private MonoBehaviour inputSourceBehaviour;
     [SerializeField] private Transform cameraTarget;
     [SerializeField] private Transform[] frontWheelVisuals;
     [SerializeField] private Transform[] rearWheelVisuals;
@@ -31,6 +31,7 @@ public sealed class KartController : MonoBehaviour
     private int miniBoostBurstId;
     private float lastMiniBoostDriftTime;
     private float wheelRoll;
+    private IKartInputSource inputSource;
 
     public Transform CameraTarget => cameraTarget != null ? cameraTarget : transform;
     public KartDriveConfig DriveConfig => driveConfig;
@@ -63,11 +64,12 @@ public sealed class KartController : MonoBehaviour
         }
 
         ApplyConfigToBody();
+        ResolveInputSource();
     }
 
     private void Update()
     {
-        ReadInput();
+        ReadInputFrame();
         AnimateWheelVisuals();
     }
 
@@ -134,6 +136,18 @@ public sealed class KartController : MonoBehaviour
         body.WakeUp();
     }
 
+    public void SetInputSource(IKartInputSource source)
+    {
+        inputSource = source;
+        inputSourceBehaviour = source as MonoBehaviour;
+    }
+
+    public void SetInputSourceBehaviour(MonoBehaviour sourceBehaviour)
+    {
+        inputSourceBehaviour = sourceBehaviour;
+        inputSource = sourceBehaviour as IKartInputSource;
+    }
+
     public void SetWheelVisuals(Transform[] frontWheels, Transform[] rearWheels, float radius)
     {
         frontWheelVisuals = frontWheels;
@@ -166,41 +180,56 @@ public sealed class KartController : MonoBehaviour
         body.WakeUp();
     }
 
-    private void ReadInput()
+    private void ReadInputFrame()
     {
-        throttleInput = 0f;
-        steerInput = 0f;
-        brakeHeld = false;
-        driftHeld = false;
-
         if (!inputEnabled)
+        {
+            ApplyInputFrame(KartInputFrame.Neutral);
+            return;
+        }
+
+        ResolveInputSource();
+        KartInputFrame inputFrame = inputSource != null ? inputSource.CurrentInput : KartInputFrame.Neutral;
+        ApplyInputFrame(inputFrame);
+    }
+
+    private void ApplyInputFrame(KartInputFrame inputFrame)
+    {
+        KartInputFrame sanitized = inputFrame.Sanitized();
+        throttleInput = sanitized.Throttle;
+        steerInput = sanitized.Steer;
+        brakeHeld = sanitized.Brake;
+        driftHeld = sanitized.Drift;
+    }
+
+    private void ResolveInputSource()
+    {
+        if (inputSource != null)
         {
             return;
         }
 
-        Keyboard keyboard = Keyboard.current;
-        if (keyboard != null)
+        if (inputSourceBehaviour is IKartInputSource configuredSource)
         {
-            if (keyboard.wKey.isPressed || keyboard.upArrowKey.isPressed) throttleInput += 1f;
-            if (keyboard.sKey.isPressed || keyboard.downArrowKey.isPressed) throttleInput -= 1f;
-            if (keyboard.dKey.isPressed || keyboard.rightArrowKey.isPressed) steerInput += 1f;
-            if (keyboard.aKey.isPressed || keyboard.leftArrowKey.isPressed) steerInput -= 1f;
-            brakeHeld = keyboard.spaceKey.isPressed;
-            driftHeld = keyboard.leftShiftKey.isPressed || keyboard.rightShiftKey.isPressed;
+            inputSource = configuredSource;
+            return;
         }
 
-        Gamepad gamepad = Gamepad.current;
-        if (gamepad != null)
+        MonoBehaviour[] behaviours = GetComponents<MonoBehaviour>();
+        for (int i = 0; i < behaviours.Length; i++)
         {
-            Vector2 stick = gamepad.leftStick.ReadValue();
-            throttleInput += stick.y;
-            steerInput += stick.x;
-            brakeHeld |= gamepad.buttonSouth.isPressed;
-            driftHeld |= gamepad.rightShoulder.isPressed || gamepad.leftShoulder.isPressed;
-        }
+            if (behaviours[i] == null || behaviours[i] == this)
+            {
+                continue;
+            }
 
-        throttleInput = Mathf.Clamp(throttleInput, -1f, 1f);
-        steerInput = Mathf.Clamp(steerInput, -1f, 1f);
+            if (behaviours[i] is IKartInputSource discoveredSource)
+            {
+                inputSourceBehaviour = behaviours[i];
+                inputSource = discoveredSource;
+                return;
+            }
+        }
     }
 
     private void ApplyDrive(float signedSpeed, Vector3 flatVelocity)

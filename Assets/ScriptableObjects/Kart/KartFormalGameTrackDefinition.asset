@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f01c957253b19174d8da1bd7880985d1, type: 3}
+  m_Name: KartFormalGameTrackDefinition
+  m_EditorClassIdentifier: Assembly-CSharp::TrackDefinition
+  targetLaps: 3
+  centerline:
+  - id: PlayerStart
+    position: {x: -40.27, y: 0.485, z: -75.44}
+    eulerAngles: {x: -0.000008029579, y: 28.591024, z: -0.00000544508}
+  - id: Kart_Checkpoint_Start
+    position: {x: -2.3908339, y: 0.050180674, z: -38.634403}
+    eulerAngles: {x: -0, y: 124.90703, z: 0}
+  - id: Kart_Checkpoint_North
+    position: {x: 16.629314, y: 0.0501893, z: 33.67296}
+    eulerAngles: {x: -0, y: 280.00085, z: -0}
+  - id: Kart_Checkpoint_East
+    position: {x: 23.32314, y: 0.050186824, z: 12.792159}
+    eulerAngles: {x: -0, y: 19.75186, z: 0}
+  - id: Kart_Checkpoint_South
+    position: {x: -33.24447, y: 0.05018969, z: 36.866714}
+    eulerAngles: {x: 0, y: 244.11353, z: 0}
+  startGrid:
+  - id: PlayerStart
+    position: {x: -40.27, y: 0.485, z: -75.44}
+    eulerAngles: {x: -0.000008029579, y: 28.591024, z: -0.00000544508}
+  checkpoints:
+  - id: Kart_Checkpoint_Start
+    position: {x: -2.3908339, y: 0.050180674, z: -38.634403}
+    eulerAngles: {x: -0, y: 124.90703, z: 0}
+  - id: Kart_Checkpoint_North
+    position: {x: 16.629314, y: 0.0501893, z: 33.67296}
+    eulerAngles: {x: -0, y: 280.00085, z: -0}
+  - id: Kart_Checkpoint_East
+    position: {x: 23.32314, y: 0.050186824, z: 12.792159}
+    eulerAngles: {x: -0, y: 19.75186, z: 0}
+  - id: Kart_Checkpoint_South
+    position: {x: -33.24447, y: 0.05018969, z: 36.866714}
+    eulerAngles: {x: 0, y: 244.11353, z: 0}
+  itemBoxes:
+  - id: Kart_ItemBox_1
+    position: {x: 15.34, y: 0.07019, z: 42.92}
+    eulerAngles: {x: -0, y: 275.5027, z: 0}
+  - id: Kart_ItemBox_2
+    position: {x: 13.100002, y: 0.07018974, z: 39.86}
+    eulerAngles: {x: -0, y: 275.5027, z: 0}
+  - id: Kart_ItemBox_3
+    position: {x: 11.299999, y: 0.070189476, z: 36.71}
+    eulerAngles: {x: -0, y: 275.5027, z: 0}
+  - id: Kart_ItemBox_4
+    position: {x: -25.635271, y: 0.07018137, z: -40.26157}
+    eulerAngles: {x: -0, y: 308.05743, z: 0}
+  - id: Kart_ItemBox_4 (1)
+    position: {x: -21.591307, y: 0.07018137, z: -41.66115}
+    eulerAngles: {x: -0, y: 308.05743, z: 0}
+  - id: Kart_ItemBox_4 (2)
+    position: {x: -23.095272, y: 0.07018137, z: -33.52157}
+    eulerAngles: {x: -0, y: 308.05743, z: 0}
+  - id: Kart_ItemBox_4 (3)
+    position: {x: -19.051308, y: 0.07018137, z: -34.92115}
+    eulerAngles: {x: -0, y: 308.05743, z: 0}
+  - id: Kart_ItemBox_4 (4)
+    position: {x: -17.006035, y: 0.07018137, z: -28.29958}
+    eulerAngles: {x: -0, y: 308.05743, z: 0}
+  - id: Kart_ItemBox_4 (5)
+    position: {x: -21.05, y: 0.07018137, z: -26.899998}
+    eulerAngles: {x: -0, y: 308.05743, z: 0}
+  - id: Kart_ItemBox_5
+    position: {x: -29.4, y: 0.15621233, z: -39.06}
+    eulerAngles: {x: -0, y: 308.05743, z: 0}
+  - id: Kart_ItemBox_5 (1)
+    position: {x: -26.86, y: 0.15621233, z: -32.32}
+    eulerAngles: {x: -0, y: 308.05743, z: 0}
+  - id: Kart_ItemBox_5 (2)
+    position: {x: -24.814728, y: 0.15621233, z: -25.69843}
+    eulerAngles: {x: -0, y: 308.05743, z: 0}
+  - id: Kart_ItemBox_6
+    position: {x: -15.88, y: 0.070189476, z: 25.13}
+    eulerAngles: {x: 0, y: 295.74, z: 0}
+  - id: Kart_ItemBox_7
+    position: {x: -17.807804, y: 0.15621233, z: 21.808859}
+    eulerAngles: {x: 0, y: 295.74, z: 0}
+  - id: Kart_ItemBox_7 (1)
+    position: {x: -19.51054, y: 0.15621233, z: 18.27106}
+    eulerAngles: {x: 0, y: 295.74, z: 0}
+  aiWaypoints:
+  - id: PlayerStart
+    position: {x: -40.27, y: 0.485, z: -75.44}
+    eulerAngles: {x: -0.000008029579, y: 28.591024, z: -0.00000544508}
+  - id: Kart_Checkpoint_Start
+    position: {x: -2.3908339, y: 0.050180674, z: -38.634403}
+    eulerAngles: {x: -0, y: 124.90703, z: 0}
+  - id: Kart_Checkpoint_North
+    position: {x: 16.629314, y: 0.0501893, z: 33.67296}
+    eulerAngles: {x: -0, y: 280.00085, z: -0}
+  - id: Kart_Checkpoint_East
+    position: {x: 23.32314, y: 0.050186824, z: 12.792159}
+    eulerAngles: {x: -0, y: 19.75186, z: 0}
+  - id: Kart_Checkpoint_South
+    position: {x: -33.24447, y: 0.05018969, z: 36.866714}
+    eulerAngles: {x: 0, y: 244.11353, z: 0}
+  cameraZones:
+  - id: MainFollowCamera
+    center: {x: 0, y: 6, z: -22}
+    size: {x: 80, y: 30, z: 80}
+    fieldOfView: 110

@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 6305209663491936494}
   - component: {fileID: 6517216282648243895}
   - component: {fileID: 40358184113422410}
+  - component: {fileID: 8727077786284958072}
   m_Layer: 0
   m_Name: PF_ArcadeKart
   m_TagString: Untagged
@@ -197,6 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KartController
   driveConfig: {fileID: 11400000, guid: 629fdcbb4e4b48b428723dd9b22086f2, type: 2}
   body: {fileID: 4021704892363383183}
+  inputSourceBehaviour: {fileID: 8727077786284958072}
   cameraTarget: {fileID: 3613173366268997570}
   frontWheelVisuals:
   - {fileID: 6608637577631864566}
@@ -266,6 +268,18 @@ MonoBehaviour:
   sparksPerSecond: 48
   pulseDuration: 0.24
   pulseRadius: 0.42
+--- !u!114 &8727077786284958072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301684289391213037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24635c39409c1442b1b000a8b716d6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KartPlayerInputSource
 --- !u!1 &1456694789220143662
 GameObject:
   m_ObjectHideFlags: 0

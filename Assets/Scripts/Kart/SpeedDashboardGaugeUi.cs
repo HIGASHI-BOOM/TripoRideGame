@@ -32,6 +32,12 @@ public sealed class SpeedDashboardGaugeUi : MonoBehaviour
     private readonly float[] segmentIntensities = new float[12];
     private int displayedSpeed = -1;
 
+    public KartController PlayerKart
+    {
+        get => playerKart;
+        set => playerKart = value;
+    }
+
     public bool ShowsNumericSpeed => speedText != null;
 
     private void Awake()

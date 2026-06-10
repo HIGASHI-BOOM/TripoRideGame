@@ -2,7 +2,7 @@ using UnityEngine;
 
 [DisallowMultipleComponent]
 [RequireComponent(typeof(ParticleSystem))]
-public sealed class CelebrationRibbonBrush : MonoBehaviour
+public sealed class CelebrationRibbonBrush : MonoBehaviour, IKartPickupEffect
 {
     [Header("References")]
     [SerializeField] private ParticleSystem ribbonParticles;
@@ -114,6 +114,11 @@ public sealed class CelebrationRibbonBrush : MonoBehaviour
             offset = Vector3.ProjectOnPlane(offset, normal);
             EmitStamp(position + offset, normal, 1f, Random.onUnitSphere);
         }
+    }
+
+    public void PlayPickupEffect(Vector3 position)
+    {
+        PlayBurst(position);
     }
 
     public void BrushAt(Vector3 position, Vector3 normal, float pressure = 1f)

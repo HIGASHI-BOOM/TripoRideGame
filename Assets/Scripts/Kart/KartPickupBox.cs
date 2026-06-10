@@ -7,7 +7,7 @@ public sealed class KartPickupBox : MonoBehaviour
     [SerializeField] private float boostDuration = 0.85f;
     [SerializeField] private float respawnDelay = 3.5f;
     [SerializeField] private Transform visualRoot;
-    [SerializeField] private CelebrationRibbonBrush pickupEffectPrefab;
+    [SerializeField] private MonoBehaviour pickupEffectPrefab;
     [SerializeField] private Vector3 pickupEffectOffset = new Vector3(0f, 0.95f, 0f);
     [Min(1)]
     [SerializeField] private int pickupEffectBursts = 3;
@@ -70,13 +70,24 @@ public sealed class KartPickupBox : MonoBehaviour
         }
 
         Vector3 effectPosition = transform.position + pickupEffectOffset;
-        CelebrationRibbonBrush effect = Instantiate(pickupEffectPrefab, effectPosition, Quaternion.identity);
+        MonoBehaviour effect = Instantiate(pickupEffectPrefab, effectPosition, Quaternion.identity);
         for (int i = 0; i < pickupEffectBursts; i++)
         {
-            effect.PlayBurst(effectPosition);
+            PlayEffectBurst(effect, effectPosition);
         }
 
         Destroy(effect.gameObject, pickupEffectLifetime);
+    }
+
+    private static void PlayEffectBurst(MonoBehaviour effect, Vector3 effectPosition)
+    {
+        if (effect is IKartPickupEffect pickupEffect)
+        {
+            pickupEffect.PlayPickupEffect(effectPosition);
+            return;
+        }
+
+        effect.SendMessage("PlayBurst", effectPosition, SendMessageOptions.DontRequireReceiver);
     }
 
     private void SetVisible(bool visible)

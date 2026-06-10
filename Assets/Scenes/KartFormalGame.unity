@@ -14248,6 +14248,10 @@ PrefabInstance:
       propertyPath: startLine
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7987206738891134147, guid: 3e961a6e622d21343b17f41e6fcd9887, type: 3}
+      propertyPath: raceManager
+      value: 
+      objectReference: {fileID: 1928143087}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14601,6 +14605,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kart_Checkpoint_South
       objectReference: {fileID: 0}
+    - target: {fileID: 7987206738891134147, guid: 3e961a6e622d21343b17f41e6fcd9887, type: 3}
+      propertyPath: raceManager
+      value: 
+      objectReference: {fileID: 1928143087}
     - target: {fileID: 7987206738891134147, guid: 3e961a6e622d21343b17f41e6fcd9887, type: 3}
       propertyPath: checkpointIndex
       value: 3
@@ -46226,6 +46234,10 @@ PrefabInstance:
       value: Kart_Checkpoint_North
       objectReference: {fileID: 0}
     - target: {fileID: 7987206738891134147, guid: 3e961a6e622d21343b17f41e6fcd9887, type: 3}
+      propertyPath: raceManager
+      value: 
+      objectReference: {fileID: 1928143087}
+    - target: {fileID: 7987206738891134147, guid: 3e961a6e622d21343b17f41e6fcd9887, type: 3}
       propertyPath: checkpointIndex
       value: 1
       objectReference: {fileID: 0}
@@ -50896,6 +50908,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1708567373}
   - {fileID: 521390368}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -56735,6 +56748,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d72eebe22b7c29a439f12183ef02eecf, type: 3}
   m_PrefabInstance: {fileID: 633792998}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1109049713 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3955634922700567230, guid: 09ea073394024134bb15638562b0b40f, type: 3}
+  m_PrefabInstance: {fileID: 521390367}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fffb704cbd8822f4ab676ae8e15126ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpeedDashboardGaugeUi
 --- !u!1001 &1112430441
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57712,6 +57736,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kart_Checkpoint_East
       objectReference: {fileID: 0}
+    - target: {fileID: 7987206738891134147, guid: 3e961a6e622d21343b17f41e6fcd9887, type: 3}
+      propertyPath: raceManager
+      value: 
+      objectReference: {fileID: 1928143087}
     - target: {fileID: 7987206738891134147, guid: 3e961a6e622d21343b17f41e6fcd9887, type: 3}
       propertyPath: checkpointIndex
       value: 2
@@ -71979,6 +72007,10 @@ PrefabInstance:
       propertyPath: m_Parameters.colorGradient.key1.g
       value: 0.50980395
       objectReference: {fileID: 0}
+    - target: {fileID: 6305209663491936494, guid: 36d59d6e7ecf32949971266d381c391b, type: 3}
+      propertyPath: inputSourceBehaviour
+      value: 
+      objectReference: {fileID: 2001108486}
     - target: {fileID: 6439190432333934781, guid: 36d59d6e7ecf32949971266d381c391b, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -106083,6 +106115,88 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1708458238}
   m_Mesh: {fileID: -5472701432888788482, guid: 0c58a7eb8452f004b9a3dfaa7820f930, type: 3}
+--- !u!1 &1708567372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1708567373}
+  - component: {fileID: 1708567375}
+  - component: {fileID: 1708567374}
+  m_Layer: 0
+  m_Name: ScreenSpeedLines
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1708567373
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708567372}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 977210667}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1708567374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708567372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42b0f917121f6c246bb67b1259ce1d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KartScreenSpeedLines
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  playerKart: {fileID: 1174391885}
+  effectEnabled: 1
+  visibleAtSpeedKph: 100
+  fullAtSpeedKph: 500
+  intensitySmoothTime: 0.12
+  minLineCount: 5
+  maxLineCount: 54
+  minLineLength: 180
+  maxLineLength: 620
+  minLineWidth: 5
+  maxLineWidth: 24
+  centerClearRadius: 0.34
+  lineColor: {r: 1, g: 1, b: 1, a: 0.82}
+  flowSpeed: 1.35
+  usePreviewSpeed: 0
+  previewSpeedKph: 150
+  currentIntensity: 0
+--- !u!222 &1708567375
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708567372}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1709329499
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -118583,8 +118697,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KartRaceSceneBootstrap
   playerKart: {fileID: 1174391885}
+  playerInputSource: {fileID: 2001108486}
+  raceManager: {fileID: 1928143087}
   wheelSet: {fileID: 1174391883}
   hud: {fileID: 1928143086}
+  speedDashboardGauge: {fileID: 1109049713}
+  screenSpeedLines: {fileID: 1708567374}
+  topSpeedUi: {fileID: 0}
   enableLegacyHud: 0
   enableInputOnStart: 1
 --- !u!114 &1928143086
@@ -118614,6 +118733,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KartRaceManager
   playerKart: {fileID: 1174391885}
+  trackDefinition: {fileID: 11400000, guid: d4671c5ca97d96b4cb64d90f70ea51f7, type: 2}
+  participants:
+  - displayName: Player
+    kart: {fileID: 1174391885}
+    playerControlled: 1
   checkpointCount: 4
   targetLaps: 3
 --- !u!4 &1928143088
@@ -122997,6 +123121,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.42, y: 0.95, z: 4.320725}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2001108486 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8727077786284958072, guid: 36d59d6e7ecf32949971266d381c391b, type: 3}
+  m_PrefabInstance: {fileID: 1174391882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24635c39409c1442b1b000a8b716d6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KartPlayerInputSource
 --- !u!1 &2001462176
 GameObject:
   m_ObjectHideFlags: 0

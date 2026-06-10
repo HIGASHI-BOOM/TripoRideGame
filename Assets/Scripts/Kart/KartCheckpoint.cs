@@ -5,6 +5,7 @@ public sealed class KartCheckpoint : MonoBehaviour
 {
     [SerializeField] private int checkpointIndex;
     [SerializeField] private bool startLine;
+    [SerializeField] private KartRaceManager raceManager;
 
     public int CheckpointIndex => checkpointIndex;
     public bool StartLine => startLine;
@@ -13,6 +14,11 @@ public sealed class KartCheckpoint : MonoBehaviour
     {
         checkpointIndex = index;
         startLine = isStartLine;
+    }
+
+    public void BindRaceManager(KartRaceManager manager)
+    {
+        raceManager = manager;
     }
 
     private void Reset()
@@ -29,10 +35,14 @@ public sealed class KartCheckpoint : MonoBehaviour
             return;
         }
 
-        KartRaceManager manager = FindAnyObjectByType<KartRaceManager>();
-        if (manager != null)
+        if (raceManager == null)
         {
-            manager.PassCheckpoint(kart, checkpointIndex);
+            raceManager = FindAnyObjectByType<KartRaceManager>();
+        }
+
+        if (raceManager != null)
+        {
+            raceManager.PassCheckpoint(kart, checkpointIndex);
         }
     }
 }
